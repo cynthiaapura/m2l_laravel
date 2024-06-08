@@ -41,16 +41,6 @@ header img{
     font-size: inherit;
 }
 
-#bg-img{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    background: url("../asset/accueil.webp")no-repeat fixed center  / cover;
-}
-
 #bg-texte{
     color: var(--blue);
     font-weight: bold;

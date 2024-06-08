@@ -10,13 +10,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
     <title>M2L</title>
 </head>
 <body>
     <header class="headband">
         <a href="#">
-            <img src="./asset/mascotte.png" alt="Logo JO Paris" aria-hidden="true">
+            <img src="{{ asset ('images/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">
             M2L - Maison des Ligues de Lorraine
