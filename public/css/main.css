@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url(./reset.css);
+@import url(./inscription.css);
+@import url(./connection.css);
+@import url(./modal.css);
+
+/* header and nav bar */
+
+.headband{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--white);
+    vertical-align: middle;
+    box-shadow: 0px 5px 12px #414141;
+}
+
+header img{
+    cursor: pointer;
+    width: 40px;
+    vertical-align: middle;
+    padding-left: 1rem;
+}
+
+.m2l{
+    display: flex;
+    font-size: inherit;
+    padding-right: 40rem;
+}
+
+.navbar a{
+    margin: auto 3rem 0 4rem;
+    padding: 10px 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    background-color: var(--white);
+    color: var(--blue);
+    font-size: inherit;
+}
+
+#bg-img{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background: url("../asset/accueil.webp")no-repeat fixed center  / cover;
+}
+
+#bg-texte{
+    color: var(--blue);
+    font-weight: bold;
+    position: absolute;
+    margin-top: 10rem;
+    margin-inline: 45rem;
+    border-radius: .5rem;
+    padding-inline: .5rem;
+    font-size: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.753);
+}
+
+.event{
+    padding-top: 5rem;
+}
+
+.event h2{
+    text-align: center;
+    margin: 2rem auto 2rem;
+}
+
+.event p{
+    text-align: center;
+    margin: 2rem auto 2rem;
+    width: 35%;
+}
+
+/* grid */
+.gallery-primary{
+    max-width: 120rem;
+    margin: 5rem auto 5rem;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.gallery-primary ul{
+    display: flex; /* flex pour flexibilité */
+    padding: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap; /* tous les elements reviennent a la ligne */
+}
+
+.gallery-primary ul li{
+    flex-grow: 1; /* cela prend toute la place disponible */
+    flex-shrink: 0; /* autorise aux petits elements de s'ajouter 0 on n'autorise pas 1 on autorise (booleen) */
+    flex-basis: calc(100% / 6); /* donne la taille en unites */
+    text-align: center;
+}
+
+.button_account{
+    margin: 2rem auto;
+    display: block;
+    padding: 1rem;
+    border-radius: .4rem;
+    font-size: large;
+    font-weight: bold;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    width: 35%;
+    text-align: center;
+}
+
+/* footer */
+
+footer{
+    text-align: center;
+    width: 100%;
+}
