@@ -9,23 +9,24 @@
 .photo_inscription{
     display: flex;
     flex-direction: row; 
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 5rem;
 }
 
 .photo_info{
     flex: 1; 
-    padding: 1.2rem;
     margin-right: .6rem; 
     margin-left: 5rem;
-    border-radius: .7rem;
 }
 
 .info{
-    flex: 1; 
+    flex-grow: 1; 
     padding: 1.2rem;
-    margin-right: 5rem; 
-    margin-left: .6rem;
     border-radius: .7rem;
+    display: flex;
+    align-items: center;
 }
 
+.list_info{
+    margin-bottom: 20px;
+}

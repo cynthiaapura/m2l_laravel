@@ -26,6 +26,6 @@ Route::get('/validation/{user}', [ValidationController::class, 'show'])->name('v
 
 Route::post('/inscription', [InscriptionController::class, 'store'])->name('inscription.store');
 
-Route::post('/login', [ValidationController::class, 'login'])->name('login');
+Route::post('/connection', [ValidationController::class, 'connection'])->name('connection');
 
 require __DIR__.'/auth.php';

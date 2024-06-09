@@ -40,27 +40,28 @@
                     @csrf
 
                     <label for="user-name">Nom *</label>
-                    <input type="text" id="user-name" name="name" placeholder="Votre nom" aria-required="true">
+                    <input type="text" id="user-name" name="name" placeholder="Votre nom" aria-required="true" required>
 
                     <label for="user-lastname">Prénom *</label>
-                    <input type="text" id="user-lastname" name="lastname" placeholder="Votre prénom" aria-required="true">
+                    <input type="text" id="user-lastname" name="lastname" placeholder="Votre prénom" aria-required="true" required>
 
                     <label for="age">Âge *</label>
-                    <input type="text" id="age" name="age" placeholder="Âge" aria-required="true">
+                    <input type="text" id="age" name="age" placeholder="Âge" aria-required="true" required>
 
                     <label for="ville">Ville *</label>
-                    <input type="text" id="ville" name="city" placeholder="Ville" aria-required="true">
+                    <input type="text" id="ville" name="city" placeholder="Ville" aria-required="true" required>
 
                     <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" placeholder="Votre mail" aria-required="true">
+                    <input type="email" id="email" name="email" placeholder="Votre mail" aria-required="true" required>
 
                     <label for="password">Votre mot de passe *</label>
-                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" aria-required="true">
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" aria-required="true" required>
                 
                     <label for="photo">
                         Téléchargez votre photo :
                         <input type="file" id="photo" name="photo" accept="image/*">
                     </label>
+                    <img id="photo-preview" src="#" alt="Photo de profil" style="display: none; max-width: 200px;">
                     
                     <button class="button_account" type="submit" value="Envoyer" aria-label="Valider votre compte">
                         Valider
@@ -72,5 +73,6 @@
     <footer>
         <p> &copy; - M2L - <time datetime="2023-01-01">2023</time> </p>
     </footer>
+    <script src="{{ asset ('/js/previewPhoto.js') }}"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ class InscriptionController extends Controller
     {
         return view('static.inscription');
     }
-    
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -40,6 +40,6 @@ class InscriptionController extends Controller
             'photo' => $validatedData['photo'] ?? null,
         ]);
 
-        return redirect()->route('validation', ['user' => $user->id])->with('success', 'Inscription réussie !');
+        return redirect()->route('validation', ['user' => $user]);
     }
 }

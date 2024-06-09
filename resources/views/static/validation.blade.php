@@ -26,10 +26,10 @@
         <nav class="navbar">
             <a href="{{ route('home') }}" id="event_home" class="button">Tous les événements</a>
             <a href="{{ route('inscription.create') }}" id="inscription" class="button">S'inscrire</a>
-            <a href="{{ route('login') }}" id="connection" class="button">Connexion</a>
+            <a href="{{ route('connection') }}" id="connection" class="button">Connexion</a>
         </nav>
     </header>
-    <main>
+    <main class="validate_main">
         <h1 class="validate_h1">
             Merci vous êtes inscrit !
             <br>
@@ -38,28 +38,18 @@
         
         <section class="photo_inscription">
             <div class="photo_info">
-                @if(session('photo'))
-                    <img src="{{ Storage::url(session('photo')) }}" alt="Photo de profil">
+                @if($user->photo)
+                    <img src="{{ Storage::url($user->photo) }}" alt="Photo de profil">
                 @endif
             </div>
 
             <div class="info">
                 <ul>
-                    <li>
-                        Nom :
-                    </li>
-                    <li>
-                        Prénom :
-                    </li>
-                    <li>
-                        Age :
-                    </li>
-                    <li>
-                        Ville :
-                    </li>
-                    <li>
-                        Mail :
-                    </li>
+                    <li class="list_info">Nom : {{ $user->name }}</li>
+                    <li class="list_info">Prénom : {{ $user->lastname }}</li>
+                    <li class="list_info">Âge : {{ $user->age }}</li>
+                    <li class="list_info">Ville : {{ $user->city }}</li>
+                    <li class="list_info">Mail : {{ $user->email }}</li>
                 </ul>
             </div>
         </section>
