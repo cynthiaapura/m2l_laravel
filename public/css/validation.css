@@ -1,0 +1,31 @@
+.validate_h1, .validate_h2{
+    text-align: center;
+}
+
+.validate_h1{
+    padding-top: 8rem;
+}
+
+.photo_inscription{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    padding-top: 5rem;
+}
+
+.photo_info{
+    flex: 1; 
+    padding: 1.2rem;
+    margin-right: .6rem; 
+    margin-left: 5rem;
+    border-radius: .7rem;
+}
+
+.info{
+    flex: 1; 
+    padding: 1.2rem;
+    margin-right: 5rem; 
+    margin-left: .6rem;
+    border-radius: .7rem;
+}
+

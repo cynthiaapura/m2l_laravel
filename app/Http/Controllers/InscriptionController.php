@@ -8,16 +8,13 @@ use App\Models\User;
 
 class InscriptionController extends Controller
 {
-    // Méthode pour afficher le formulaire d'inscription
     public function create()
     {
         return view('static.inscription');
     }
-
-    // Méthode pour traiter la soumission du formulaire d'inscription
+    
     public function store(Request $request)
     {
-        // Valider les données du formulaire
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'lastname' => 'required|string|max:255',
@@ -28,13 +25,11 @@ class InscriptionController extends Controller
             'photo' => 'nullable|image|max:2048',
         ]);
 
-        // Traiter le téléchargement de la photo si elle est présente
         if ($request->hasFile('photo')) {
             $path = $request->file('photo')->store('public/photos');
             $validatedData['photo'] = $path;
         }
 
-        // Enregistrer l'utilisateur dans la base de données
         $user = User::create([
             'name' => $validatedData['name'],
             'lastname' => $validatedData['lastname'],
@@ -45,9 +40,6 @@ class InscriptionController extends Controller
             'photo' => $validatedData['photo'] ?? null,
         ]);
 
-        // Rediriger avec un message de succès
-        return redirect()->route('home')->with('success', 'Inscription réussie !');
-
+        return redirect()->route('validation', ['user' => $user->id])->with('success', 'Inscription réussie !');
     }
 }
-

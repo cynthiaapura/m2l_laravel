@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>M2L</title>
 </head>
 <body>
@@ -125,6 +126,5 @@
     <footer>
        <p> &copy; - M2L - <time datetime="2023-01-01">2023</time> </p>
     </footer>
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
