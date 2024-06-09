@@ -1,40 +1,10 @@
 
 #formInscription{
-    height: 100vh; 
+    min-height: calc(100vh - 10rem); 
+    
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.formInscription h2{
-    display: flex;
-    text-align: center;
-    max-width: 40%;
-    font-size: 4rem;
-    margin: auto;
-    padding-top: 7rem;
-}
-
-.formInscription p{
-    display: flex;
-    text-align: center;
-    max-width: 35%;
-    margin-top: 2rem;
-    margin: auto;
-}
-
-.warning{
-    top: 35%;
-    left: 50%;
-    position: absolute;
-    width: max-content;
-    transform: translate(-50%, -35%);
-    font-weight: bolder;
-    color: var(--red);
-    font-size: 1.8rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-   
 }
 
 .inscription-form fieldset {

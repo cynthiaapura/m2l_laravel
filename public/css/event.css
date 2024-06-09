@@ -1,0 +1,68 @@
+#eventAdd{
+    height: 100vh; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajout_event{
+    font-size: 5rem;
+    padding-top: 8rem;
+    text-align: center;
+}
+
+.loading_img{
+    padding-bottom: 2.5rem;
+}
+.desc fieldset {
+    border-radius: 1rem;
+    border: solid .1rem rgb(0, 0, 0);
+}
+
+.desc fieldset legend{
+    padding: 1rem;
+    font-size: large;
+    font-variant: small-caps; 
+}
+
+.desc{
+    max-width: 100rem;
+    margin: 0 auto 2rem;
+    padding-top: 5rem;
+}
+
+.desc form *{
+    display: block;
+    padding: .5rem 0;
+}
+
+.desc input[type="checkbox"]{
+    width: auto;
+    margin: 2rem 0;
+}
+
+.desc form input{
+    width: 100%;
+    line-height: 3.5rem;
+    padding: .5rem;
+    transition: all .6s ease-in-out;
+}
+
+.desc form input[type="email"],
+.desc form input[type="password"],
+.desc form input[type="text"]{
+    
+    border-bottom: solid .1rem #ccc; 
+    background: rgba(244, 244, 244, 0.800);
+    width: 100%;
+
+}
+
+desc form [placeholder]{
+    font-style: italic;
+    transition: all .6s ease-in-out;
+}
+
+desc form [placeholder]:focus{
+    font-style: normal;
+}
