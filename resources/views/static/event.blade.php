@@ -30,7 +30,7 @@
         </nav>
     </header>
     <main>
-        <h1 class="ajout_event">
+        <h1 class="h1_title">
             Ajouter un événement
         </h1>
         <div class="desc">
@@ -56,6 +56,9 @@
 
                     @if(session('success'))
                         <p style="color: green;">{{ session('success') }}</p>
+                        <button class="button_account" type="button" onclick="window.location.href='{{ url('/events') }}'" aria-label="Voir tous les événements">
+                            Voir tous les événements
+                        </button>
                     @endif
 
                     <button class="button_account" type="submit" value="Envoyer" aria-label="Valider votre compte">

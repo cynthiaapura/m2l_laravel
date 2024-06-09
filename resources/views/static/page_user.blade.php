@@ -30,31 +30,40 @@
         </nav>
     </header>
     <main>
-        <section class="form" id="formSection">
-
-            <div class="connection-form" id="user_connection" role="form" aria-labelledby="user_connection">
-                <fieldset>
-                    <legend>
-                        Connectez-vous à votre compte
-                    </legend>
-                    <form action="{{ route('login') }}" method="post">
-                        @csrf
-                        <label for="email-co">Mail *</label>
-                        <input type="email" id="email-co" name="email" 
-                        placeholder="Votre mail" aria-required="true" >
-
-                        <label for="password-co">Mot de passe *</label>
-                        <input type="password" id="password-co" name="password" 
-                        placeholder="Votre mot de passe" aria-required="true" >
-                    
-                        <button class="button_account" type="submit" aria-label="Connexion à votre compte">
-                            Connexion à votre compte
-                        </button>
-                    </form>
-                </fieldset>
-            </div>
-
+        <h1 class="h1_title">
+            Vos événements
+        </h1>
+        <section id="tableau" class="tableau-events">
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>N° de l'événement</th>
+                        <th>Titre de l'événement</th>
+                        <th>Description de l'événement</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($events as $event)
+                    <tr>
+                        <td>{{ $event->id }}</td>
+                        <td>{{ $event->name }}</td>
+                        <td>{{ $event->desc }}</td>
+                        <td>
+                            @if($event->photo)
+                                <img src="{{ asset($event->photo) }}" alt="Image de l'événement">
+                            @else
+                                Aucune image disponible
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </section>
+        <div class="add-event-button">
+            <a href="{{ route('events.create') }}" class="button_account">Ajouter un événement</a>
+        </div>
     </main>
     <footer>
         &copy; - M2L - <time datetime="2023-01-01">2023</time>

@@ -70,6 +70,12 @@ header img{
     width: 35%;
 }
 
+.h1_title{
+    font-size: 5rem;
+    padding-top: 8rem;
+    text-align: center;
+}
+
 /* grid */
 .gallery-primary{
     max-width: 120rem;

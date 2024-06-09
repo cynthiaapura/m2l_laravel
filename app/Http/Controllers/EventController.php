@@ -7,6 +7,24 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    // Récupère tous les événements de la liste pour les afficher dans la vue page_user
+    public function index()
+    {
+        $events = Event::all();
+        return view('static.page_user', ['events' => $events]);
+    }
+
+    // Renvoi la vue pour la création d'un nouvel événement
+    public function show()
+    {
+        return view('static.event');
+    }
+
+    public function create()
+    {
+        return view('static.event');
+    }
+
     public function store(Request $request)
     {
         // Valider les données du formulaire
