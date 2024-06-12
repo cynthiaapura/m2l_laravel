@@ -17,7 +17,7 @@
 <body>
     <header class="headband">
         <a href="{{ url('/') }}">
-            <img src="{{ asset('images/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
+            <img src="{{ asset('photo/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">
             M2L - Maison des Ligues de Lorraine

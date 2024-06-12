@@ -24,7 +24,10 @@ Route::get('/event', function (){
 
 Route::get('/inscription', [InscriptionController::class, 'create'])->name('inscription.create');
 
-Route::get('/validation/{user}', [ValidationController::class, 'show'])->name('validation');
+Route::get('/validation/{user}', function (Request $request) {
+    $user = Auth::user();
+    return view('static.validation', ['user' => $user]);
+})->name('validation');
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/events/create', [EventController::class, 'create'])->name('events.create');

@@ -17,7 +17,7 @@
 <body>
     <header class="headband">
         <a href="#">
-            <img src="{{ asset('images/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
+            <img src="{{ asset('photo/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">
             M2L - Maison des Ligues de Lorraine
@@ -54,8 +54,8 @@
             </div>
         </section>
         
-        <a href="{{ auth()->check() ? route('page_user.index') : route('home') }}" class="button_account">
-            {{ auth()->check() ? 'Voir vos événements' : 'Retour à la page d\'accueil' }}      
+        <a href="{{ auth()->check() ? route('events.create') : route('home') }}" class="button_account">
+            {{ auth()->check() ? 'Ajouter un événement' : 'Retour à la page d\'accueil' }}      
         </a>
     </main>
     <footer>

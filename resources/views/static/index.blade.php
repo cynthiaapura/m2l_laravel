@@ -17,7 +17,7 @@
 <body>
     <header class="headband">
         <a href="{{ url('/') }}">
-            <img src="{{ asset('images/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
+            <img src="{{ asset('photo/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">
             M2L - Maison des Ligues de Lorraine
@@ -39,7 +39,7 @@
                 justify-content: center;
                 align-items: flex-start;
                 height: 100vh;
-                background: url("{{ asset('images/accueil.webp') }}") no-repeat fixed center / cover;
+                background: url("{{ asset('photo/accueil.webp') }}") no-repeat fixed center / cover;
             }
         </style>
         <div id="bg-texte">
@@ -60,43 +60,43 @@
         <div class="gallery-primary" role="group" aria-labelledby="event">
             <ul id="event">
                 <li>
-                    <img src="{{ asset('images/basket.jpg') }}" alt="basketball" class="event-image">
+                    <img src="{{ asset('photo/basket.jpg') }}" alt="basketball" class="event-image">
                     Basketball
                 </li>
                 <li>
-                    <img src="{{ asset('images/foot.jpg') }}" alt="football" class="event-image">
+                    <img src="{{ asset('photo/foot.jpg') }}" alt="football" class="event-image">
                     Football
                 </li>
                 <li>
-                    <img src="{{ asset('images/patinage.jpg') }}" alt="patinage artistique" class="event-image">
+                    <img src="{{ asset('photo/patinage.jpg') }}" alt="patinage artistique" class="event-image">
                     Patinage artistique
                 </li>
                 <li>
-                    <img src="{{ asset('images/judo.jpg') }}" alt="judo" class="event-image">
+                    <img src="{{ asset('photo/judo.jpg') }}" alt="judo" class="event-image">
                     Judo
                 </li>
                 <li>
-                    <img src="{{ asset('images/golf.jpg') }}" alt="golf" class="event-image">
+                    <img src="{{ asset('photo/golf.jpg') }}" alt="golf" class="event-image">
                     Golf
                 </li>
                 <li>
-                    <img src="{{ asset('images/baseball.jpg') }}" alt="baseball" class="event-image">
+                    <img src="{{ asset('photo/baseball.jpg') }}" alt="baseball" class="event-image">
                     Baseball
                 </li>
                 <li>
-                    <img src="{{ asset('images/hockey.jpg') }}" alt="hockey" class="event-image">
+                    <img src="{{ asset('photo/hockey.jpg') }}" alt="hockey" class="event-image">
                     Hockey sur glace
                 </li>
                 <li>
-                    <img src="{{ asset('images/tennis.jpg') }}" alt="tennis" class="event-image">
+                    <img src="{{ asset('photo/tennis.jpg') }}" alt="tennis" class="event-image">
                     Tennis
                 </li>
                 <li>
-                    <img src="{{ asset('images/volley.jpg') }}" alt="volleyball" class="event-image">
+                    <img src="{{ asset('photo/volley.jpg') }}" alt="volleyball" class="event-image">
                     Volleyball
                 </li>
                 <li>
-                    <img src="{{ asset('images/rugby.jpg') }}" alt="rugby" class="event-image">
+                    <img src="{{ asset('photo/rugby.jpg') }}" alt="rugby" class="event-image">
                     Rugby
                 </li>
             </ul>

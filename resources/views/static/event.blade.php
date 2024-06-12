@@ -17,7 +17,7 @@
 <body>
     <header class="headband">
         <a href="{{ url('/') }}">
-            <img src="{{ asset('images/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
+            <img src="{{ asset('photo/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">
             M2L - Maison des Ligues de Lorraine
@@ -38,16 +38,16 @@
                 <legend>
                     Votre événement
                 </legend>
-                <div class="loading_img">
-                    <label for="photo">
-                        Téléchargez votre photo :
-                        <input type="file" id="photo" name="photo" accept="image/*">
-                    </label>
-                    <img id="photo-preview" src="#" alt="Photo de profil" style="display: none; max-width: 300px; margin: 0 auto;">
-                </div>
                 <form action="{{ route('events.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-    
+                    <div class="loading_img">
+                        <label for="photo">
+                            Téléchargez votre photo :
+                            <input type="file" id="photo" name="photo" accept="image/*">
+                        </label>
+                        <img id="photo-preview" src="#" alt="Photo de profil" style="display: none; max-width: 300px; margin: 0 auto;">
+                    </div>
+
                     <label for="event-name">Nom de l'événement *</label>
                     <input type="text" id="event-name" name="name" placeholder="Événement" aria-required="true" required>
     
@@ -61,9 +61,9 @@
                         </button>
                     @endif
 
-                    <button class="button_account" type="submit" value="Envoyer" aria-label="Valider votre compte">
-                        Valider
-                    </button>
+                    <div class="add-event-button">
+                        <a href="{{ route('page_user.index') }}" class="button_account">Valider</a>
+                    </div>
                 </form>
             </fieldset>
         </div>

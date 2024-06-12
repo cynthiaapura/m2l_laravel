@@ -15,4 +15,16 @@ class PageUserController extends Controller
             'events' => $events
         ]);
     }
+
+    public function store(Request $request)
+    {
+        $events = new Events;
+        if ($request->hasFile('photo')) {
+            $imagePath = $request->file('photo')->store('public/events');
+            $event->photo = $imagePath;
+        }
+        
+        $event->save();
+
+    }
 }

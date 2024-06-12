@@ -17,7 +17,7 @@
 <body>
     <header class="headband">
         <a href="{{ url('/') }}">
-            <img src="{{ asset('images/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
+            <img src="{{ asset('photo/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">
             M2L - Maison des Ligues de Lorraine
@@ -51,7 +51,7 @@
                         <td>{{ $event->desc }}</td>
                         <td>
                             @if($event->photo)
-                                <img src="{{ asset($event->photo) }}" alt="Image de l'événement">
+                                <img src="{{ Storage::url($event->photo) }}" alt="Image de l'événement">
                             @else
                                 Aucune image disponible
                             @endif
