@@ -30,8 +30,8 @@ Route::get('/validation/{user}', function (Request $request) {
 })->name('validation');
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
-Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
-Route::post('/events', [EventController::class, 'store'])->name('events.store');
+Route::get('/event', [EventController::class, 'create'])->name('events.create');
+Route::post('/event', [EventController::class, 'store'])->name('events.store');
 
 Route::post('/inscription', [InscriptionController::class, 'store'])->name('inscription.store');
 Route::get('/page_user', [PageUserController::class, 'index'])->name('page_user.index');

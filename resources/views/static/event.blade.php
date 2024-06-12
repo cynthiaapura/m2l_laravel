@@ -56,13 +56,10 @@
 
                     @if(session('success'))
                         <p style="color: green;">{{ session('success') }}</p>
-                        <button class="button_account" type="button" onclick="window.location.href='{{ url('/events') }}'" aria-label="Voir tous les événements">
-                            Voir tous les événements
-                        </button>
                     @endif
-
+            
                     <div class="add-event-button">
-                        <a href="{{ route('page_user.index') }}" class="button_account">Valider</a>
+                        <button type="submit" class="button_account">Valider</button>
                     </div>
                 </form>
             </fieldset>

@@ -51,7 +51,7 @@
                         <td>{{ $event->desc }}</td>
                         <td>
                             @if($event->photo)
-                                <img src="{{ Storage::url($event->photo) }}" alt="Image de l'événement">
+                                <img src="{{ Storage::url($event->photo) }}" alt="Image de l'événement" style="width: 100px; height: auto;">
                             @else
                                 Aucune image disponible
                             @endif

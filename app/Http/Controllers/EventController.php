@@ -41,7 +41,7 @@ class EventController extends Controller
 
         // Traitement de l'image
         if ($request->hasFile('photo')) {
-            $imagePath = $request->file('photo')->store('events');
+            $imagePath = $request->file('photo')->store('events', 'public');
             $event->photo = $imagePath;
         }
 
