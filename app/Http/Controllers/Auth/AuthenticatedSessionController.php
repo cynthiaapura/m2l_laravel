@@ -7,7 +7,10 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
+use App\Models\Event;
+use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -24,11 +27,24 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('page_user'));
+        $credentials = $request->only('email', 'password');
+    
+        // Rechercher l'utilisateur par adresse e-mail
+        $user = User::where('email', $credentials['email'])->first();
+    
+        // Vérifier si l'utilisateur existe et si le mot de passe est correct
+        if ($user && Hash::check($credentials['password'], $user->password)) {
+            // Connexion de l'utilisateur
+            Auth::login($user);
+    
+            // Rediriger l'utilisateur vers la page de son espace utilisateur
+            return redirect()->intended(route('page_user.index'));
+        }
+    
+        // Si les informations d'identification sont incorrectes, rediriger avec un message d'erreur
+        return back()->withErrors([
+            'email' => 'Adresse e-mail ou mot de passe incorrect.',
+        ]);
     }
 
     /**

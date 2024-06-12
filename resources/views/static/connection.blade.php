@@ -26,7 +26,7 @@
         <nav class="navbar">
             <a href="{{ url('/#event_view') }}" id="event" class="button">Tous les événements</a>
             <a href="{{ url('/inscription') }}" id="inscription" class="button">S'inscrire</a>
-            <a href="{{ url('/#connection') }}" id="connection" class="button">Connexion</a>
+            <a href="{{ url('/#') }}" id="connection" class="button">Connexion</a>
         </nav>
     </header>
     <main>
@@ -37,7 +37,18 @@
                     <legend>
                         Connectez-vous à votre compte
                     </legend>
-                    <form action="{{ route('login') }}" method="post">
+
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                    <form action="{{ route('loginOk') }}" method="post">
                         @csrf
                         <label for="email-co">Mail *</label>
                         <input type="email" id="email-co" name="email" 

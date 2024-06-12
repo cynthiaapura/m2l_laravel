@@ -48,6 +48,15 @@ class LoginRequest extends FormRequest
         }
     }
 
+    public function messages(): array
+    {
+        return [
+            'email.required' => 'Champ obligatoire.',
+            'email.email' => 'Veuillez fournir une adresse email valide.',
+            'password.required' => 'Champ obligatoire.',
+        ];
+    }
+
     /**
      * Ensure the login request is not rate limited.
      *

@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 Route::get('/connection', [AuthenticatedSessionController::class, 'create'])->name('login.form');
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-Route::post('/login', [AuthenticatedSessionController::class, 'store']);
+Route::post('/loginOk', [AuthenticatedSessionController::class, 'store'])->name('loginOk');
 
 Route::get('/validation', function () {
     return view('static.validation');
