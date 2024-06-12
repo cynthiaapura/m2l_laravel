@@ -45,7 +45,7 @@
                     </label>
                     <img id="photo-preview" src="#" alt="Photo de profil" style="display: none; max-width: 300px; margin: 0 auto;">
                 </div>
-                <form action="{{ route('event.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('events.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
     
                     <label for="event-name">Nom de l'événement *</label>

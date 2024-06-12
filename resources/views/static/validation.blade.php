@@ -26,7 +26,7 @@
         <nav class="navbar">
             <a href="{{ route('home') }}" id="event_home" class="button">Tous les événements</a>
             <a href="{{ route('inscription.create') }}" id="inscription" class="button">S'inscrire</a>
-            <a href="{{ route('connection') }}" id="connection" class="button">Connexion</a>
+            <a href="{{ route('login.form') }}" id="connection" class="button">Connexion</a>
         </nav>
     </header>
     <main class="validate_main">
@@ -54,8 +54,8 @@
             </div>
         </section>
         
-        <a href="{{ route('home') }}" class="button_account">
-            Revenir à l'accueil
+        <a href="{{ auth()->check() ? route('page_user.index') : route('home') }}" class="button_account">
+            {{ auth()->check() ? 'Voir vos événements' : 'Retour à la page d\'accueil' }}      
         </a>
     </main>
     <footer>

@@ -48,6 +48,6 @@ class EventController extends Controller
         $event->save();
 
         // Rediriger l'utilisateur vers une page de confirmation ou autre
-        return redirect()->back()->with('success', 'Votre événement a été soumis avec succès.');
+        return redirect()->route('page_user.index')->with('success', 'Votre événement a été soumis avec succès.');
     }
 }

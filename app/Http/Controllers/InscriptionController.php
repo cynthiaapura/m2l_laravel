@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class InscriptionController extends Controller
@@ -30,6 +31,7 @@ class InscriptionController extends Controller
             $validatedData['photo'] = $path;
         }
 
+        // Création de l'utilisateur
         $user = User::create([
             'name' => $validatedData['name'],
             'lastname' => $validatedData['lastname'],
@@ -40,6 +42,10 @@ class InscriptionController extends Controller
             'photo' => $validatedData['photo'] ?? null,
         ]);
 
-        return redirect()->route('validation', ['user' => $user]);
+        // Authentification de l'utilisateur nouvellement créé
+        Auth::login($user);
+
+        // Redirection vers la page de validation avec les données de l'utilisateur
+        return redirect()->route('validation', ['user' => $user])->with('success', 'Votre compte a été créé avec succès.');
     }
 }
