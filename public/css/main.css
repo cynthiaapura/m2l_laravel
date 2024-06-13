@@ -6,6 +6,7 @@
 @import url(./validation.css);
 @import url(./event.css);
 @import url(./page_user.css);
+@import url(./user_list.css);
 
 /* header and nav bar */
 .headband{
@@ -114,6 +115,27 @@ header img{
     width: 35%;
     text-align: center;
 }
+
+.add-event-button {
+    display: flex;
+    justify-content: center; 
+    gap: 1rem;
+}
+
+.button_ulist{
+    margin: 2rem auto;
+    display: block;
+    padding: 1rem;
+    border-radius: .4rem;
+    font-size: large;
+    font-weight: bold;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    width: 35%;
+    text-align: center;
+}
+
 
 /* footer */
 

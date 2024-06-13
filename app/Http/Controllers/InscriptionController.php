@@ -48,4 +48,46 @@ class InscriptionController extends Controller
         // Redirection vers la page de validation avec les données de l'utilisateur
         return redirect()->route('validation', ['user' => $user])->with('success', 'Votre compte a été créé avec succès.');
     }
+
+    public function edit()
+    {
+        $user = Auth::user();
+        return view('profile.edit', compact('user'));
+    }
+
+    // Mettre à jour le profil utilisateur
+    public function update(Request $request)
+    {
+        $user = Auth::user();
+        $user->update($request->validate([
+            'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'age' => 'required|integer',
+            'city' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'password' => 'nullable|string|min:8',
+            'photo' => 'nullable|image|max:2048',
+        ]));
+
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+
+        if ($request->hasFile('photo')) {
+            $user->photo = $request->file('photo')->store('public/photos');
+        }
+
+        $user->save();
+
+        return redirect()->route('profile.edit')->with('success', 'Profil mis à jour.');
+    }
+
+    // Supprimer le compte utilisateur
+    public function destroy()
+    {
+        $user = Auth::user();
+        Auth::logout();
+        $user->delete();
+        return redirect('/')->with('success', 'Compte supprimé.');
+    }
 }

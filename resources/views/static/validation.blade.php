@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="headband">
-        <a href="#">
+        <a href="{{ route('home') }}">
             <img src="{{ asset('photo/mascotte.png') }}" alt="Logo JO Paris" aria-hidden="true">
         </a>           
         <h1 class="m2l">

@@ -1,13 +1,5 @@
-.tableau-events {
-    min-height: calc(100vh - 10rem); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .tableau-user {
-    max-width: 100%;
     min-height: calc(100vh - 10rem); 
     display: flex;
     flex-direction: column;
@@ -15,26 +7,27 @@
     justify-content: center;
 }
 
-.event-table {
-    width: 90%; 
+.user-table {
+    width: 100%; 
     border-collapse: collapse;
     border: solid .1rem rgb(0, 0, 0); 
 }
 
-.event-table th, .event-table td {
+.user-table th, .user-table td {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-.event-table th {
+.user-table th {
     background-color: #f2f2f2;
     text-align: left;
 }
 
-.event-table tbody tr:nth-child(even) {
+.user-table tbody tr:nth-child(even) {
     background-color: #f2f2f2; 
 }
 
-.event-table tbody tr:hover {
+.user-table tbody tr:hover {
     background-color: #ddd; 
 }
+
