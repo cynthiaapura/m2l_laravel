@@ -8,6 +8,10 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public function isAdmin()
+    {
+        return $this->role === 'admin'; // Assurez-vous d'avoir un champ de rôle dans votre table users
+    }
     use HasFactory, Notifiable;
 
     protected $fillable = [

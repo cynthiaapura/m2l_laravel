@@ -22,6 +22,15 @@ class AuthenticatedSessionController extends Controller
         return view('static.connection');
     }
 
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->isAdmin()) { // Vous devez définir cette méthode isAdmin() dans votre modèle User
+            return redirect()->route('admin.dashboard'); // Redirige vers la page admin
+        }
+
+        return redirect('/'); // Redirige vers une autre page si l'utilisateur n'est pas admin
+    }
+
     /**
      * Handle an incoming authentication request.
      */
@@ -38,7 +47,11 @@ class AuthenticatedSessionController extends Controller
             Auth::login($user);
     
             // Rediriger l'utilisateur vers la page de son espace utilisateur
-            return redirect()->intended(route('page_user.index'));
+            if ($user->isAdmin()) {
+                return redirect()->route('admin.index'); // Redirige vers la page admin
+            } else {
+                return redirect()->intended(route('page_user.index')); // Redirige vers la page utilisateur normale
+            }
         }
     
         // Si les informations d'identification sont incorrectes, rediriger avec un message d'erreur

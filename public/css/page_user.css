@@ -1,5 +1,5 @@
 .tableau-events {
-    min-height: calc(100vh - 10rem); 
+    min-height: calc(100vh - 40rem); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,4 +37,11 @@
 
 .event-table tbody tr:hover {
     background-color: #ddd; 
+}
+
+caption{
+    font-size: 1.5em;
+    font-weight: bold; 
+    border: 1px solid #ddd;
+    padding: 10px; 
 }

@@ -31,46 +31,37 @@
     </header>
     <main>
         <h1 class="h1_title">
-            Les membres
+            Les événements
         </h1>
 
-        <section id="tableau" class="tableau-user">
-            <form action="{{ route('user.action') }}" method="post" class="event-table">
-                @csrf
-                <input type="hidden" name="action" value="edit">
-                <table class="user-table">
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Age</th>
-                            <th>Ville</th>
-                            <th>Email</th>
-                            <th>Photo</th>
-                            <th>Sélectionner</th> 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($users as $user)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->lastname }}</td>
-                            <td>{{ $user->age }}</td>
-                            <td>{{ $user->city }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td>
-                                @if($user->photo)
-                                    <img src="{{ Storage::url($user->photo) }}" alt="Image de l'événement" style="width: 100px; height: auto;">
-                                @else
-                                    Aucune image disponible
-                                @endif
-                            </td>
-                            <input type="radio" name="event_id" value="{{ $event->id }}">
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                
+        <section id="tableau" class="tableau-events">
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>N° de l'événement</th>
+                        <th>Titre de l'événement</th>
+                        <th>Description de l'événement</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($events as $event)
+                    <tr>
+                        <td>{{ $event->id }}</td>
+                        <td>{{ $event->name }}</td>
+                        <td>{{ $event->desc }}</td>
+                        <td>
+                            @if($event->photo)
+                                <img src="{{ Storage::url($event->photo) }}" alt="Image de l'événement" style="width: 100px; height: auto;">
+                            @else
+                                Aucune image disponible
+                            @endif
+                        </td>
+                        <td><input type="radio" name="event_id" value="{{ $event->id }}"></td> 
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
                 <div class="add-event-button">
                     <button type="submit" name="action" value="edit" class="button_ulist">Modifier</button>
                     <button type="submit" name="action" value="delete" class="button_ulist">Supprimer</button>

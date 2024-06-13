@@ -6,14 +6,25 @@ use App\Http\Controllers\ValidationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PageUserController;
 use App\Http\Controllers\UserListController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventListController;
 
 Route::get('/', function () {
     return view('static.index');
 })->name('home');
 
+Route::get('/event_list', [EventListController::class, 'index'])->name('event_list.index');
+
 Route::get('/connection', [AuthenticatedSessionController::class, 'create'])->name('login.form');
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::post('/loginOk', [AuthenticatedSessionController::class, 'store'])->name('loginOk');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->middleware('admin');
+
+// Route pour la vue admin
+Route::get('/user_list', [UserListController::class, 'index'])->name('user_list.index');
+Route::get('/page_user', [PageUserController::class, 'index'])->name('page_user.index');
+
 
 Route::get('/validation', function () {
     return view('static.validation');

@@ -37,47 +37,32 @@
                 <form action="{{ isset($user) ? route('user.update', ['id' => $user->id]) : '' }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <label for="user-name">Nom *</label>
-                    <input type="text" id="user-name" name="name" value="{{ old('name', $user->name) }}" placeholder="Votre nom" aria-required="true" required>
-                    @error('name')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
 
-                    <label for="user-lastname">Prénom *</label>
-                    <input type="text" id="user-lastname" name="lastname" value="{{ old('lastname') }}" placeholder="Votre prénom" aria-required="true" required>
-                    @error('lastname')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
+                    <label for="current-photo">Photo actuelle :</label><br>
+                    @if(isset($user) && $user->photo)
+                        <img src="{{ asset('storage/' . $user->photo) }}" alt="Photo actuelle de l'utilisateur" style="max-width: 200px;"><br>
+                    @endif
 
-                    <label for="age">Âge *</label>
-                    <input type="text" id="age" name="age" value="{{ old('age') }}" placeholder="Âge" aria-required="true" required>
-                    @error('age')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-
-                    <label for="ville">Ville *</label>
-                    <input type="text" id="ville" name="city" value="{{ old('city') }}" placeholder="Ville" aria-required="true" required>
-                    @error('city')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Votre mail" aria-required="true" required>
-                    @error('email')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
-
+                    <label for="user-name">Nom</label>
+                    <input type="text" id="user-name" name="name" value="{{ isset($user) ? $user->name : old('name') }}" placeholder="Votre nom" aria-required="true">
+                
+                    <label for="user-lastname">Prénom</label>
+                    <input type="text" id="user-lastname" name="lastname" value="{{ isset($user) ? $user->lastname : old('lastname') }}" placeholder="Votre prénom" aria-required="true">
+                
+                    <label for="age">Âge</label>
+                    <input type="text" id="age" name="age" value="{{ isset($user) ? $user->age : old('age') }}" placeholder="Âge" aria-required="true">
+                
+                    <label for="ville">Ville</label>
+                    <input type="text" id="ville" name="city" value="{{ isset($user) ? $user->city : old('city') }}" placeholder="Ville" aria-required="true">
+                
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="{{ isset($user) ? $user->email : old('email') }}" placeholder="Votre mail" aria-required="true">
+                
                     <label for="password">Votre mot de passe *</label>
-                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" aria-required="true" required>
-                    @error('password')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" aria-required="true">
                 
                     <label for="photo">Téléchargez votre photo :</label>
                     <input type="file" id="photo" name="photo" accept="image/*">
-                    @error('photo')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
 
                     <button class="button_account" type="submit" aria-label="Valider les modifs">Valider les modifications</button>
                 </form>
