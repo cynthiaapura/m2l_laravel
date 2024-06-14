@@ -1,6 +1,7 @@
 # Maison des ligues
 
-Lien vers le site de la Maison des Ligues de Lorraine : [cliquez ici](https://cynthiaapura.github.io/projet_maison_des_ligues/)
+Lien vers le site de la Maison des Ligues de Lorraine : Version statique
+[cliquez ici](https://cynthiaapura.github.io/projet_maison_des_ligues/)
 
 ## Contexte du projet
 
