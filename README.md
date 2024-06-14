@@ -1,66 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Maison des ligues
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Lien vers le site de la Maison des Ligues de Lorraine : [cliquez ici](https://cynthiaapura.github.io/projet_maison_des_ligues/)
 
-## About Laravel
+## Contexte du projet
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Dans le cadre de notre BTS, nous devons réaliser un projet web, une connexion à une base de donnée et une gestion d'employés et d'événements.
+Cette situation professionnelle est réalisée dans le contexte de la M2L ou Maison des ligues de Lorraine.
+Nous devons développer une page publicitaire pour la Maison des Ligues. A l’occasion des Jeux de Paris 2024, cette promotion a pour but de conquérir des nouveaux abonné(e)s, en proposant la diffusion de toutes les compétitions sportives.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Un cahier des charges nous a été imposé ainsi qu'un wireframe et une charte graphique. La maquette devait être réaliser par nous-même.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Les technologies autorisées sont le HTML/CSS, JS et PHP.
 
-## Learning Laravel
+## Wireframe
+Ci-dessous le wireframe sur lequel nous devions nous baser pour la conception de notre site web.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![accueil](public/contenu/accueil.png)
+![accueil](public/contenu/wireframe2.png)
+![accueil](public/contenu/wireframe3.png)
+![accueil](public/contenu/wireframe4.png)
+![accueil](public/contenu/wireframe5.png)
+![accueil](public/contenu/wireframe6.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Maquette
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ci-dessous la maquette que nous devions concevoir nous même en nous référent au wireframe imposé.
 
-## Laravel Sponsors
+#### Page d'accueil
+![accueil](public/contenu/accueil.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+#### Les événements crées
 
-### Premium Partners
+Visible par tous, il n'est pas nécessaire d'avoir un compte afin d'accèder aux informations des événements.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+![event](public/contenu/event.png)
 
-## Contributing
+#### Formulaire d'inscription
+![form_inscription](public/contenu/formulaire_inscription.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Confirmation d'inscription
+![connexion](public/contenu/confirmation_inscription.png)
 
-## Code of Conduct
+#### Connexion
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+A partir de cette fenêtre il est possible de se connecter à son compte afin d'ajouter un événement. Si l'utilisateur est un adminstrateur il aura également les droits de modifications et de suppression sur tous les utilisateurs.
 
-## Security Vulnerabilities
+![co_admin](public/contenu/connexion.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Ajout d'un événement
 
-## License
+L'ajout d'événements nécéssite d'avoir crée un compte au préalable.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![ajout_event](public/contenu/ajout_event.png)
+
+#### Administration des membres
+
+Accesible seulement pour les administateurs du site.
+
+![admin_membres](public/contenu/admin_membres.png)
+
+
+### Partie Dynamique
+
+Pour toute la partie dynamique et gestion de la base de données, j'ai utilisé le framework Laravel
